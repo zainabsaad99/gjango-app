@@ -1,0 +1,147 @@
+{% extends 'main_page/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{ contact }}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{ home }}</a></li>
+          <li>{{ contact }}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-6" >
+          <div class="col-lg-6 " >
+            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-map"></i>
+              <h3>{{ address_title }}</h3>
+              <p>{{ address }}</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-envelope"></i>
+              <h3>{{ Email_title }}</h3>
+              <p>{{ Email }}</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item  d-flex flex-column justify-content-center align-items-center">
+              <i class="bi bi-telephone"></i>
+              <h3>{{ phone_title }}</h3>
+              <p>{{ phone }}</p>
+            </div>
+          </div><!-- End Info Item -->
+
+    
+        
+        
+
+        </div>
+
+ 
+
+        <div class="row gy-4 mt-1">
+
+          <div class="col-lg-6 ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8003268137754!2d35.510860174638275!3d33.86903642738381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f17d5e87611d3%3A0xac7e35326003e33e!2z2YXZg9iq2Kgg2KfZhNmF2K3Yp9mF2Yog2KjYp9iz2YUg2K3Zhdiv!5e0!3m2!1sen!2slb!4v1696328993442!5m2!1sen!2slb"
+              frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+          </div><!-- End Google Maps -->
+
+          <div class="col-lg-6">
+            <form id="form-contact" method="post" class="php-email-form">
+
+              {% csrf_token %}
+              <div class="row gy-4">
+                <div class="col-lg-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="{{ your_name }}" required>
+                </div>
+                <div class="col-lg-6 form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="{{ your_email }}" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="{{ your_case }}" required>
+              </div>
+              <div class="form-group">
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="{{ case_description }}" required></textarea>
+
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+               
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">{{ Send_Message }}</button></div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+        <div class="row gy-4 mt-1 align-items-center QR-item" data-aos="fade-up" >
+
+          <div class="col-md-3">
+            <img src="{% static 'assets/img/scan.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-md-7">
+            <h3>لتفحص المعلومات</h3>
+            <p class="fst-italic">
+              يمكنك الحصول على كافة معلوماتنا على هاتفك المحمول من خلال QR code
+            </p>
+         
+          </div>
+        </div><!-- QR Item -->
+
+      
+
+    
+      </div>
+    </section><!-- End Contact Section -->
+  
+  
+
+  </main>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script type="text/javascript">
+    $(document).on('submit','#form-contact',function(e){
+      e.preventDefault();
+      $.ajax({
+          type:'POST',
+          url:'{% url "contact" %}',
+          data:
+          {
+              name:$("#name").val(),
+              email:$("#email").val(),
+              subject:$("#subject").val(),
+              message:$("#message").val(),
+              csrfmiddlewaretoken:$('input[name=csrfmiddlewaretoken]').val()
+          },
+          success:function(){
+                $("#name").val('');
+                $("#email").val('');
+                $("#subject").val('');
+                $("#message").val('');
+              
+                
+                  }
+          })
+      });
+    </script>
+
+  {% endblock %}

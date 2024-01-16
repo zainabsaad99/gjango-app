@@ -1,0 +1,69 @@
+{% extends 'main_page/main.html' %}
+{%load static%}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{article_text}}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{home}}</a></li>
+          <li>{{article_text}}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="section-header">
+            <h2>{{article_text}}</h2>
+           
+          </div>
+          <div class="row gy-4 posts-list">
+            {% for article in articles %}
+            <div class="col-xl-4 col-md-6">
+              <div class="post-item position-relative h-100">
+  
+                <div class="post-img position-relative overflow-hidden">
+                  <img src="{% static article.intro_img %}" class="img-fluid" alt="">
+                  <span class="post-date">{{article.txt.date}}</span>
+                </div>
+  
+                <div class="post-content d-flex flex-column">
+  
+                  <h3 class="post-title">{{article.txt.title}}</h3>
+  
+                  <div class="meta d-flex align-items-center">
+                    <div class="d-flex align-items-center">
+                      <i class="bi bi-person"></i> <span class="ps-2">{{article.txt.author_name}}</span>
+                    </div>
+                   
+                  </div>
+  
+                  <p>
+                    {{article.txt.short_intro}}
+                  </p>
+  
+                  <hr>
+  
+                  <a href="{% url 'article' article.name %}" class="readmore stretched-link"><span>المزيد</span><i class="bi bi-arrow-right"></i></a>
+  
+                </div>
+  
+              </div>
+            </div><!-- End post list item -->
+            {% endfor %}
+  
+          </div><!-- End blog posts list -->
+  
+  
+        </div>
+      </section><!-- End Blog Section -->
+  
+    </main><!-- End #main -->
+
+{% endblock %}

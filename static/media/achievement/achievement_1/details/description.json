@@ -1,0 +1,36 @@
+{
+    "en": {
+
+        "description":"description abouth the first project ",
+        "Project_information":"Project information",
+        "Category":"Category: ",
+        "Client":"Client: ",
+        "Project_date":"Project date: ",
+        "Project_URL":"Project URL: ",
+        "Details":"Details",
+        "Home":"Home",
+        "category_type":"category of project one",
+        "client_name":"client name",
+        "date":"submit date",
+        "url":"project url",
+        "project_title":"project title",
+        "project_describtion":"This is a description about the project "
+
+    },
+    "deutsch": {
+  
+    },
+    
+    "ar": {
+     
+        "description":"شرح عن المشروع الاول"
+
+        
+    },
+    
+        
+  
+    "chinese": {
+
+    }
+}

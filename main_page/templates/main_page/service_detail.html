@@ -1,0 +1,53 @@
+{% extends 'main_page/main.html' %}
+{%load static%}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{service_details}}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{home}}</a></li>
+          <li>{{service_details}}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-header">
+        <h2>{{services_text}}</h2>
+      
+      </div>
+
+      <div class="row gy-4">
+        {% for service in services %}
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item  position-relative">
+            <div class="icon">
+              <i class="{{ service.txt.icon }}"></i>
+            
+            </div>
+            <h3>{{service.txt.service_title}}</h3>
+          
+           
+          </div>
+        </div><!-- End Service Item -->
+        {% endfor %}
+  
+ 
+
+      </div>
+
+    </div>
+  </section><!-- End Services Section -->
+  
+    </main><!-- End #main -->
+
+{% endblock %}

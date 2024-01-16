@@ -1,0 +1,65 @@
+{% extends 'main_page/main.html' %}
+{%load static%}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{our_team}}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{home}}</a></li>
+          <li>{{our_team}}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="lawyersection" class="lawyersection">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-header">
+            <h2>{{our_team}}</h2>
+            <p>{{intro_for_our_team}}</p>
+          </div>
+  
+          <div class="row gy-5">
+            {% for lawyer in lawyerdata %}
+            <div class="col-lg-4 col-md-6 member" >
+              <!-- rest of your HTML -->
+          
+              <div class="member-img">
+                <img src="{% static lawyer.intro_img %}" class="img-fluid" alt="" style="height: 500px; width: 100%;">
+                
+              
+
+              </div>
+              <div class="lawyer-info text-center" data-aos="fade-up" data-aos-delay="100" onmouseover="showSocialIcons(this)" onmouseout="hideSocialIcons(this)">
+                
+                <h4>{{lawyer.txt.lawyer_name}}</h4>
+                <span>{{lawyer.txt.lawyer_tilte}}</span>
+              
+                <a href="{% url 'lawyer' lawyer.name %}" class="readmore stretched-link"><span>المزيد</span><i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+           
+            {% endfor %}
+  
+    
+       
+  
+          </div>
+  
+        </div>
+      </section>
+   
+ 
+
+
+  </main><!-- End #main -->
+  
+  
+  
+{% endblock %}

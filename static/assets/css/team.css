@@ -1,0 +1,82 @@
+
+/*--------------------------------------------------------------
+#.lawyersection Section
+--------------------------------------------------------------*/
+.lawyersection .container .member-img {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.lawyersection .container .media {
+  position: absolute;
+  left: 0;
+  top: -18px;
+  right: 0;
+  opacity: 0;
+  transition: ease-in-out 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lawyersection .container .media a {
+  transition: color 0.3s;
+  color: #ffffff;
+  background: #0ea2bd;
+  margin: 0 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.lawyersection .container .media a i {
+  line-height: 0;
+  font-size: 16px;
+}
+
+.lawyersection .container .media a:hover {
+  background: #1ec3e0;
+}
+
+.lawyersection .container .media i {
+  font-size: 18px;
+  margin: 0 2px;
+}
+
+.lawyersection .container  .lawyer-info {
+  padding: 30px 15px;
+  text-align: center;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  margin: -50px 20px 0 20px;
+  position: relative;
+  border-radius: 8px;
+}
+
+.lawyersection .container  .lawyer-info h4 {
+  font-weight: 400;
+  margin-bottom: 5px;
+  font-size: 24px;
+  color: #485664;
+}
+
+.lawyersection .container  .lawyer-info span {
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  color: #6c757d;
+}
+
+.lawyersection .container  .lawyer-info p {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 26px;
+  color: #6c757d;
+}
+
+
+

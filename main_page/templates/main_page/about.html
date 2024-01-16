@@ -1,0 +1,137 @@
+{% extends 'main_page/main.html' %}
+{%load static%}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{about_me}}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{home}}</a></li>
+          <li>{{about_me}}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="resume" class="resume">
+        <div class="container">
+  
+          <div class="section-title">
+          
+            <h2>{{My_resume}}</h2>
+           
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-6">
+              <h3 class="resume-title">{{peronal_info}}</h3>
+              <div class="resume-item pb-0">
+                
+                <p>
+                <ul>
+                  <li>{{address_title}} : {{address}}</li>
+                  <li>{{phone_title}} : {{phone}}</li>
+                  <li>{{Email_title}} : {{Email}}</li>
+                </ul>
+                </p>
+              </div>
+  
+              <h3 class="resume-title">{{Education}}</h3>
+              <div class="resume-item">
+                <h4>{{school_eduction}}</h4>
+                <h5>{{school_eduction_graduation}}</h5>
+                
+                <p>{{school_eduction_description}}</p>
+              </div>
+              <div class="resume-item">
+                <h4>{{university_BACHELOR}}</h4>
+                <h5>{{university_BACHELOR_graduation}}</h5>
+                <p>{{university_BACHELOR_description}}</p>
+              </div>
+              <div class="resume-item">
+                <h4>{{university_diploma1}}</h4>
+                <h5>{{university_diploma1_graduation}}</h5>
+                <p>{{university_diploma1_description}}</p>
+              </div>
+              <div class="resume-item">
+                <h4>{{university_diploma2}}</h4>
+                <h5>{{university_diploma2_graduation}}</h5>
+                <p>{{university_diploma2_description}}</p>
+              </div>
+              <div class="resume-item">
+                <h4>{{joining_lawyer_assco}}</h4>
+                <h5>{{joining_date}}</h5>
+                <p>{{joining_lawyer_description}}</p>
+              </div>
+              <div class="resume-item">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <h3 class="resume-title">{{experience}}</h3>
+              <div class="resume-item">
+                
+                <ul>
+                  <li>{{experience_1}}</li>
+                  <br>
+                  <li>{{experience_2}}</li>
+                  <br>
+                  <li>{{experience_3}}</li>
+                  <br>
+                  <li>{{experience_4}}</li>
+                  <br>
+                  <li>{{experience_5}}</li>
+                  <br>
+                  <li>{{experience_6}}</li>
+                  <br>
+                  <li>{{experience_7}}</li>
+                  <br>
+                  <li>{{experience_8}}</li>
+                  <br>
+                  <li>{{experience_9}}</li>
+                  <br>
+                  <li>{{experience_10}}</li>
+                  <br>
+                  <li>{{experience_11}}</li>
+                  
+                
+                 
+                </ul>
+                
+                <ul>
+                  <li><strong>{{experience_12.intro}}</strong></li>
+                <ol>
+                  <li>{{experience_12.first_one}}</li>
+                  <li>{{experience_12.second_one}}</li>
+                  <li>{{experience_12.third_one}}</li>
+                </ol>
+              </ul>
+           
+              </div>
+           
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End My Resume Section -->
+     
+  
+      <section id="stats-counter" class="stats-counter section-bg">
+      
+     
+  
+     
+   
+
+  </main><!-- End #main -->
+
+{% endblock %}

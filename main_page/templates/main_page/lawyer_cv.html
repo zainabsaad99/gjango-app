@@ -1,0 +1,82 @@
+{% extends 'main_page/main.html' %}
+{%load static%}
+
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('{% static 'assets/img/background-bg.jpg' %}');">
+      <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
+
+        <h2>{{lawyer.desc.lawyer_name}}</h2>
+        <ol>
+          <li><a href="{% url 'home' %}">{{home}}</a></li>
+          <li>{{lawyer.desc.lawyer_name}}</li>
+        </ol>
+
+      </div>
+    </div><!-- End Breadcrumbs -->
+
+    <section id="resume" class="resume">
+        <div class="container">
+  
+          <div class="section-title">
+          
+           
+           
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-6">
+           
+  
+              <h3 class="resume-title">{{Education}}</h3>
+              {% for learn_key, learn_data in lawyer.desc.learn.items %}
+              <div class="resume-item">
+                <h4>{{learn_data.type}}</h4>
+                <h5>{{learn_data.year}}</h5>
+                
+                <p>{{learn_data.university}}</p>
+              </div>
+              {% endfor %}
+             
+              <div class="resume-item">
+                 {% for experience_key, experience_data in lawyer.desc.experience.items %}
+                <br>
+                {% endfor %}
+              </div>
+          
+
+            </div>
+            <div class="col-lg-6">
+              <h3 class="resume-title">تعريف</h3>
+              
+              <div class="resume-item">
+                {% for experience_key, experience_data in lawyer.desc.experience.items %}
+                <ul>
+                  <li>{{experience_data}}</li>
+                  <br>
+                 
+                 
+                </ul>
+                {% endfor %}
+               
+           
+              </div>
+           
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End My Resume Section -->
+     
+  
+     
+     
+  
+     
+   
+
+  </main><!-- End #main -->
+
+{% endblock %}
