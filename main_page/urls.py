@@ -15,5 +15,7 @@ urlpatterns = [
     path('about/',views.about,name='about'),
     path('lawyerinfo/',views.lawyer_info,name='lawyer'),
     path('lawyer/<str:lawyer_name>',views.lawyer_cv, name='lawyer'),
+    path('videos/',views.videos,name='videos'),
+
     
 ]

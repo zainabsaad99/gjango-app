@@ -34,35 +34,26 @@
                 </div>
   
                 <div class="post-content d-flex flex-column">
-  
                   <h3 class="post-title">{{article.txt.title}}</h3>
-  
                   <div class="meta d-flex align-items-center">
                     <div class="d-flex align-items-center">
-                      <i class="bi bi-person"></i> <span class="ps-2">{{article.txt.author_name}}</span>
+                      <i class="fa-solid fa-person"></i> <span class="ps-2">{{article.txt.author_name}}</span>
                     </div>
-                   
+
                   </div>
-  
                   <p>
                     {{article.txt.short_intro}}
                   </p>
-  
                   <hr>
-  
-                  <a href="{% url 'article' article.name %}" class="readmore stretched-link"><span>المزيد</span><i class="bi bi-arrow-right"></i></a>
-  
+                  <a href="{% url 'article' article.name %}" class="readmore stretched-link"><span>المزيد</span><i class="fa-solid fa-arrow-right"></i></a>
                 </div>
   
               </div>
             </div><!-- End post list item -->
             {% endfor %}
-  
           </div><!-- End blog posts list -->
-  
-  
         </div>
-      </section><!-- End Blog Section -->
+    </section><!-- End Blog Section -->
   
     </main><!-- End #main -->
 
